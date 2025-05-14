@@ -1,0 +1,25 @@
+import { ResolveFn } from "@angular/router";
+import { GeneralInfosService } from "../services/general-infos.service";
+import { inject } from "@angular/core";
+import { firstValueFrom } from "rxjs";
+/**
+ * serve para obter varios dados e enviar para um componente
+ * @returns 
+ */
+export const generalInfosResolver: ResolveFn<any> = () => {
+    const generalInfosService = inject(GeneralInfosService)
+
+    return Promise.all([
+        firstValueFrom(generalInfosService.getIncidents()),
+        firstValueFrom(generalInfosService.getPendingPayments()),
+        firstValueFrom(generalInfosService.getNewAccount()),
+        firstValueFrom(generalInfosService.getActiveUser()),
+    ]).then(([incidents, pendingPayments, newAccounts, activeUsers]) => {
+        return {
+            incidents, 
+            pendingPayments,
+            newAccounts,
+            activeUsers
+        }
+    })
+}

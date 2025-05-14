@@ -1,0 +1,19 @@
+<form [formGroup]="musicasForm">
+    <div formArrayName="musicas">
+        <div *ngFor="let musica of musicas.controls; let i = index" [formGroupName]="i">
+            <label [for]="'titulo-' + i">Titulo:</label>
+            <input type="text" [id]="'titulo-' + i" formControlName="titulo">
+
+            <br>
+
+            <label [for]="'banda-' + i">Banda:</label>
+            <input type="text" [id]="'banda-' + i" formControlName="banda">
+        </div>
+        <p>
+            musicas form valido: {{ musicasForm.valid }}
+        </p>
+        <p>
+            form array valido: {{ musicas.valid }}
+        </p>
+    </div>
+</form>

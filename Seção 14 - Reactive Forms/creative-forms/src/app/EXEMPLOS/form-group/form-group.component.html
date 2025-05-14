@@ -1,0 +1,39 @@
+<form [formGroup]="pessoaForm" (ngSubmit)="onFormSubmit()">
+    <label for="name" >Nome: </label>
+    <input type="text" id="name" formControlName="nome">
+    <p style="color: red;" *ngIf="pessoaForm.get('nome')?.hasError('required')">O nome é obrigatório</p>
+
+    <br>
+    <label for="email" >Email: </label>
+    <input type="text" id="email" formControlName="email">
+    <p style="color: red;" *ngIf="email?.hasError('required')">O Email é obrigatório</p>
+
+    <br>
+
+    <!-- grupoform filho precisa ser declarado assim -->
+    <div formGroupName="endereco">
+        <label for="street" >Rua: </label>
+        <input type="text" id="street" formControlName="rua">
+        <p style="color: red;" *ngIf="endereco?.get('rua')?.hasError('required')">A rua é obrigatório</p>
+        <br>
+
+        <label for="number" >Numero: </label>
+        <input type="text" id="number" formControlName="numero">
+        <p style="color: red;" *ngIf="endereco?.get('numero')?.hasError('required')">O numero é obrigatório</p>
+    </div>
+
+    <!-- [disabled]="!pessoaForm.valid" -->
+    <button type="submit" 
+     (click)="mostrarValue()">Enviar</button>
+
+     <br>
+
+     <button (click)="alteracaoTotal()">Alteração Total</button>
+
+     <br>
+
+     <button (click)="alteracaoParcial()">Alteração Parcial</button>
+
+    <p>Formulário valido: {{ pessoaForm.valid }}</p>
+    <p>Endereco valido: {{ pessoaForm.get('endereco')?.valid }}</p>
+</form>

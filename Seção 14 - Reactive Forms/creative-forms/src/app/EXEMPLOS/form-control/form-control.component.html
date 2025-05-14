@@ -1,0 +1,27 @@
+<!-- id deve ser o mesmo do for -->
+<label for="nome">Nome: </label>
+<input type="text" id="name" [formControl]="nome" (input)="inputAlterado($event)" />
+<div style="color: red;">
+    <span *ngIf="nome.hasError('required')">O campo nome é obrigatório.</span>
+    <span *ngIf="nome.hasError('minlength') && !nome.hasError('required')">É necessário no mínimo 6 caracteres.</span>
+    <span *ngIf="nome.hasError('maxlength') && !nome.hasError('required')">É necessário o máximo de 8 caracteres.</span>
+    <span *ngIf="nome.hasError('invalidText') && !nome.hasError('required')">{{ nome.errors?.['invalidText'] }}</span>
+</div>
+
+
+<p>Valor: {{nome.value}}</p>
+<p>Válido: {{nome.valid}}</p>
+
+<button (click)="mostrarStatus()">Mostra status</button> <br>
+
+<button (click)="alterarValor()">Alterar Valor</button> <br>
+
+<button (click)="desabilitar()">Desabilitar</button> <br>
+
+<button (click)="habilitar()">Habilitar</button> <br>
+
+<button (click)="resetar()">Resetar</button> <br>
+
+<button (click)="setValidators()">Set Validators</button> <br>
+
+<button (click)="addValidator()">Add Validators</button> <br>

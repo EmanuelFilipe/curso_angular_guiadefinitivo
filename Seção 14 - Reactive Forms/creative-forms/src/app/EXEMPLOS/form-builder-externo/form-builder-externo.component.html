@@ -1,0 +1,32 @@
+<form [formGroup]="pessoaForm" (ngSubmit)="onFormSubmit()">
+    <label for="name">Nome:</label><br>
+    <input type="text" id="name" formControlName="nome">
+    <p *ngIf="nomeControl.hasError('required')">O nome é obrigatório</p>
+    <br>
+
+    <label for="name">Email:</label><br>
+    <input type="text" id="email" formControlName="Email">
+    <br>
+
+    <div formGroupName="endereco">
+        <h4>Endereço:</h4>
+
+        <label for="name">Rua:</label><br>
+        <input type="text" id="street" formControlName="rua">
+        <br>
+
+        <label for="name">Número:</label><br>
+        <input type="text" id="number" formControlName="numero">
+    </div>
+
+    <div formArrayName="musicas">
+        <h4>Musicas:</h4>
+
+        <div *ngFor="let musica of musicas.controls; let i = index;">
+            <label [for]="'musica-' + i">Musica {{ i + 1 }}:</label>
+            <input type="text" [id]="'musica-' + i" [formControlName]="i" />
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="!pessoaForm.valid">Enviar</button>
+</form>
