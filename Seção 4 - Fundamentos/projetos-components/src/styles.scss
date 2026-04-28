@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* esses exemplos abaixo significa que a classe tem que esta diretamente na mesma tag do elemento
+
+*/
+/*nome do componente + id do elemento*/
+mat-slider#custom-slider .mat-slider-track--active_fill {
+    background-color: yellow !important;
+}
+
+/*nome do componente +nome da class*/
+mat-slider.custom-slider .mat-slider-track--active_fill {
+    background-color: yellow !important;
+}
+
+/*
+<mat-slider>
+    <div class="custom-slider">
+    </div> 
+</mat-slider>
+
+ficaria assim:
+mat-slider .custom-slider .mat-slider-track--active_fill {
+    background-color: yellow !important;
+
+*/

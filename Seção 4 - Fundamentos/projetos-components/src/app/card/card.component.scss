@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;800&family=Roboto+Mono:wght@100&display=swap');
+
+.card {
+    max-width: 350px;
+    background-color: #fd7557;
+    border-radius: 25px;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+
+    &__item {
+        padding: 10px;
+    }
+
+    &__plan {
+        font-size: 22px;
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 40px;
+    }
+}
+
+/*
+a classe .card-button pertence ao component filho <app-card-button>
+dentro da classe pai consigo alterar essa classe do filho atraves do ng-deep
+*/
+// ::ng-deep .card-cancel-button {
+//     background-color: yellow !important;
+// }
+
+/* se precisar especificar, pode ser feito usando um id que vc incluir no html 
+ou incluindo uma class ao invez de id
+*/
+// ::ng-deep #cancel-button .card-cancel-button {
+//     background-color: yellow !important;
+// }
+
+// o host faz com que a alteração no css fique restrito a este componente
+:host ::ng-deep .card-cancel-button {
+    background-color: yellow !important;
+}

@@ -1,0 +1,146 @@
+<input [value]="inputText" 
+[type]="inputType"
+[disabled]="inputDisabled"
+(keyup)="handleInputKeyUp($event)"
+>
+<br>
+
+<button [style.width]="'100px'" [style.background-color]="color" [attr.disabled]='true' [attr.title]='buttonTitle'>
+    Teste
+</button>
+
+<button [style.width.px]="width">
+    Teste 2
+</button>
+
+<button [style]="{ width: '150px', backgroundColor: 'orange' }">
+    Teste 3
+</button>
+
+<button [style]="stylesObjJson">
+    Teste 4
+</button>
+
+<button (click)="updtateStylesObjJson()">
+    Atualizar obj JSON
+</button>
+
+<!-- <input [value]="inputText" 
+[type]="inputType"
+[attr.disabled]="inputDisabled"
+(keyup)="handleInputKeyUp($event)"
+> -->
+
+<!-- CLASS -->
+
+<br>
+<button [class.red-button]="true">Vermelho</button>
+<button [class]="'red-button'">Vermelho</button>
+<button [class]="{
+    'red-button': true,
+    'font': true
+}">Vermelho</button>
+
+<br>
+<button (click)="enabledInput()">Habilitar</button>
+<button (click)="disabledInput()">Desabilitar</button>
+
+<br>
+<button (click)="setPasswordInput()">Senha</button>
+<button (click)="setTextInput()">Texto</button>
+
+<br>
+<button (click)="setLogInput()">Log</button>
+
+<br>
+<hr>
+
+Two Way Data Binding
+<h1>Nome:</h1>
+<input type="text" [(ngModel)]="name">
+
+<h1>Nome digitado: {{name}} </h1>
+
+<br>
+<hr>
+NG IF
+<br>
+<button (click)="minhaPropIf = !minhaPropIf">Toogle Prop If</button>
+
+<div style="background-color: green;" *ngIf="minhaPropIf; else templateFalse">Sou uma div true</div>
+<ng-template #templateFalse>
+    <div style="background-color: red;">
+        template de If false
+    </div>
+</ng-template>
+
+<!-- <ng-container *ngIf="minhaPropIf; then templateTrue; else templateFalse"></ng-container>
+<ng-template #templateTrue>
+    <div style="background-color: green;">
+        template true
+    </div>
+</ng-template>
+<ng-template #templateFalse>
+    <div style="background-color: red;">
+        template false
+    </div>
+</ng-template> -->
+
+<br>
+<hr>
+Ng For
+
+<div class="list">
+    <div *ngFor="let pessoa of listaPessoas; 
+        let i = index; let isOdd = odd; let isFirst = first; let isLast = last"
+        class="item" [class.item--odd]="isOdd"
+        [class.item--highlighted]="personSelectedIndex === i"
+        (click)="selectPerson(i)">
+        <p class="item__name">{{i+1 + ' - ' + pessoa.nome}}</p>
+        <p class="item__age">{{pessoa.idade}}</p>
+        <p class="item__age" *ngIf="isFirst">é o primeiro</p>
+        <p class="item__age" *ngIf="isLast">é o ultimo</p>
+    </div>
+</div>
+
+<br>
+<hr>
+NgStyle
+<h1 [ngStyle]="{
+    'font-size': fontSize + 'px',
+    'color': textColor
+    }">Sou um h1</h1>
+
+<h1 
+    [style.font-size.px]="fontSize"
+    [style.color]="textColor"
+>Sou um h2</h1>
+
+<br>
+<button (click)="incriseFontSize()">+A</button>    
+<button (click)="toogleFontColor()">toogle color</button>    
+
+<br>
+<hr>
+NgClass
+
+<h1 [ngClass]="{
+    'is-big is-green': isGreen,
+    'is-oragen': !isGreen
+}"></h1>
+
+<br>
+<hr>
+Pipe
+<h1> {{ text | uppercase }}</h1>
+<h1> {{ pessoa | json }}</h1>
+<br>
+<h1 [class]="{
+    'active': pessoa.status === 1
+}"> {{ pessoa.name }}</h1>
+<h1 [class]="pessoa2.status | statusClass"> {{ pessoa2.name }}</h1>
+<h1 [class]="{
+    'blocked': pessoa3.status === 3
+}"> {{ pessoa3.name }}</h1>
+
+
