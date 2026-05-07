@@ -1,6 +1,7 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
+    // aqui é o nome do pipe que será usado no template
     name: 'statusClass'
 })
 
