@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="left-container">
+        <div class="top-div">
+            <app-filter (onFilterEmitt)="onFilter($event)"/>
+        </div>
+        <div class="main-left-div">
+            <app-users-list [usersList]="usersListFiltered" (userSelected)="onUserSelected($event)"/>
+        </div>
+    </div>
+    <div class="right-div">
+        @if (showUserDetails) {
+            <app-user-details [user]="userSelected" />
+        }
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    height: 100vh; /* altura total do monitor */ 
+}
+
+.left-container {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* organiza as divs filhas verticalmente */
+}
+
+.top-div {
+    flex-grow: 1;
+    /* preencha todo o espaço disponível */
+}
+
+.main-left-div {
+    height: 80%;
+    /* ocupa 80% da altura do seu container pai */
+}
+
+.right-div {
+    width: 30%;
+    max-height: 100vh;
+    border-left: 3px solid black;
+}
