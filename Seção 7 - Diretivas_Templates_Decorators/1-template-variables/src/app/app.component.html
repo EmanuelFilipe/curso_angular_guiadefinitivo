@@ -1,0 +1,35 @@
+Meu input: <input type="text" #meuInput>
+
+<!-- CHANGE DETECTION -->
+<!-- Valor: {{meuInput.value}}
+<br>
+<button (click)="changeDetection()">Atualizar</button>   -->
+<!-- CHANGE DETECTION -->
+
+
+<!-- ViewChield -->
+<!-- <button (click)="updateInputText()">Atualizar</button>
+
+<br><br>
+<div #minhaDiv>
+    Conteudo inicial
+</div>
+<button (click)="updateDivContent()">Atualizar</button>
+
+<br>
+FILHO
+<app-filho #filhoComp />
+
+<button (click)="hello()">Oi Pai</button> -->
+
+
+<!-- ViewChildren -->
+<button 
+    #meuButton
+    *ngFor="let button of buttonList" (click)="changeColor($event)">
+    {{button}}
+</button>
+|
+<button (click)="resetButtons()">Resetar</button>
+|
+<button (click)="remove()">Remover Item</button>

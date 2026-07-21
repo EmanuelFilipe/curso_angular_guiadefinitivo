@@ -1,0 +1,7 @@
+<input placeholder="Digite algo" #meuInput>
+<button (click)="createElementCorrect(meuInput.value)">Criar Elemento</button>
+<br>
+
+<!-- XSS teste - pegando esse codigo e colocando no input irá verificar que o alert será executado
+<button (click)="createElement(meuInput.value)">Criar Elemento</button>
+<img src="teste.jpg" onerror="alert('Imagem não encontrada')" /> -->

@@ -1,6 +1,7 @@
 .container {
     display: flex;
     height: 100vh; /* altura total do monitor */ 
+    background-color: ghostwhite;
 }
 
 .left-container {
@@ -18,6 +19,7 @@
 
 .main-left-div {
     height: 80%;
+    padding: 0 20px;
     /* ocupa 80% da altura do seu container pai */
 }
 

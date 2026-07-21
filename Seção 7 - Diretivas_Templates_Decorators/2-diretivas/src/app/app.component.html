@@ -1,0 +1,59 @@
+<!-- <app-sem-diretiva></app-sem-diretiva>
+
+<app-com-diretiva></app-com-diretiva> -->
+
+<!-- <button appDisabled>Botão com diretiva</button> -->
+
+
+<!-- StyleDirective 
+<p>Paragrafo normal</p>
+
+<p [attr.style]="'background-color: orange'">Attr</p>
+
+<p [style]="'background-color: orange'">Prop</p>
+
+<p [style]="{
+    backgroundColor: 'orange',
+    color: 'white'
+}">Prop Obj</p>
+
+<p appStyle>Directive</p>
+
+</>StyleDirective -->
+
+ <!-- ClassDirective
+
+<p class="meu-texto">Paragrafo normal</p>
+
+<p [attr.class]="'meu-texto'">Paragrafo normal</p>
+
+<p [className]="'meu-texto meu-size'">Prop binding</p>
+
+<p [class]="{
+    'meu-texto': true,
+    'meu-size': true
+}">Prop Class</p>
+
+<p appClass>Directive</p>
+
+</ClassDirective> -->
+
+<!-- ListenerDirective 
+
+<input type="text" appListener>
+</ListenerDirective> -->
+
+<!-- InputBackgroundDirective -->
+
+<input type="text" 
+    appInputBackground="blue"
+    [textColor]="'white'">
+
+<br>
+
+<!-- quando passa um texto pra um input, nao precisa do binding com [] -->
+<input type="text" 
+    appInputBackground="orange"
+    textColor="white">
+
+<!-- </InputBackgroundDirective> -->

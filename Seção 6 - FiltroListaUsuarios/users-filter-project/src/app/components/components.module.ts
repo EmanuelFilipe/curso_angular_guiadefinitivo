@@ -4,14 +4,15 @@ import { CommonModule } from "@angular/common";
 
 import { AngularMaterialModule } from "../angular-material/angular-material.module";
 import { UserDetailsComponent } from './user-details/user-details.component';
-import { FilterComponent } from './filter/filter.component';
+
 import { UsersListComponent } from './users-list/users-list.component';
 import { PipesModule } from "../pipes/pipes.module";
+import { UserFilterComponent } from "./user-filter/user-filter.component";
 
 @NgModule({
     declarations: [
       UserDetailsComponent,
-      FilterComponent,
+      UserFilterComponent,
       UsersListComponent
     ],
     imports: [
@@ -22,7 +23,7 @@ import { PipesModule } from "../pipes/pipes.module";
     ],
     exports: [
       UserDetailsComponent,
-      FilterComponent,
+      UserFilterComponent,
       UsersListComponent
     ]
 })
